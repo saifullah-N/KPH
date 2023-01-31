@@ -1,0 +1,14 @@
+path{
+  stroke: rgb(62, 160, 247);
+  fill: none;
+}
+
+text{     
+  /* stroke:aliceblue; */
+  fill: rgb(255, 255, 255);
+  text-shadow:
+  -1px -1px 3px rgb(23, 23, 232)
+  -1px  1px 3px navy
+  -1px -1px 3px navy
+   1px  1px 3px navy
+}
