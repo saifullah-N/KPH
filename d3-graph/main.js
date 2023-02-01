@@ -2,6 +2,23 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 // import * as d3 from 'd3'
+// ?   
+/**************************
+data = [
+      {
+        date: date
+        total: total time of call
+        details:[
+          {
+          name: "to",
+          date: "2016-01-01 12:30:45",
+          value: msg duration,
+        }
+        ]
+      }
+]
+
+******************************* */
 import calenderHeatMap from "./calendar-heatmap";
 let obj = document.querySelector('#app')
 //  = setupCounter(document.querySelector('#counter'))

@@ -43,7 +43,6 @@
 //     );
 //   }
 // export default App
-
 import React from "react";
 import ReactDOM from "react-dom";
 import "pikaday/css/pikaday.css";
@@ -52,6 +51,8 @@ import { HotTable, HotColumn } from "@handsontable/react";
 import { data } from "./data";
 import { ProgressBarRenderer } from "./renderers/ProgressBar";
 // import { StarsRenderer } from "./renderers/Stars";
+// import { readCSV, DataFrame } from "danfojs"
+// import * as dfd from "danfojs"
 
 import {
   drawCheckboxInRowHeaders,
@@ -61,24 +62,19 @@ import {
 } from "./hooksCallbacks";
 
 import "handsontable/dist/handsontable.min.css";
-
 const App = () => {
+  // let x = dfd.readCSV("./assets/MOCK_DATA.csv")
+  console.log(data)
   return (
+    <div>
+    <nav> 
+      <input type="text" />
+    </nav>
     <HotTable
       data={data}
       // height={450}
-      colWidths={[140, 126, 192, 100, 100, 90, 90, 110, 97]}
-      colHeaders={[
-        "Company name",
-        "Country",
-        "Name",
-        "Sell date",
-        "Order ID",
-        "In stock",
-        "Qty",
-        "Progress",
-        "Rating"
-      ]}
+      colWidths={[140, 140, 140, 140, 140, 140,140,140,140,100,]}
+      colHeaders={data[0]}
       dropdownMenu={true}
       hiddenColumns={{
         indicators: true
@@ -94,27 +90,25 @@ const App = () => {
       manualRowMove={true}
       licenseKey="non-commercial-and-evaluation"
     >
-      <HotColumn data={1} />
-      {/* {data.map((d,i)=>{ console.log(d); return <HotColumn data={d} />})} */}
-      <HotColumn data={2} />
-      <HotColumn data={3} />
-      <HotColumn data={4} type="date" allowInvalid={false} />
-      <HotColumn data={5} />
-      <HotColumn data={6} type="checkbox" className="htCenter" />
-      <HotColumn data={7} type="numeric" />
-      <HotColumn data={8} readOnly={true} className="htMiddle">
+      {/* <HotColumn data={1} /> */}
+      {data.map((d,i)=>{ return i==0 ? <HotColumn data={i+1} /> : <HotColumn data={i}/>})}
+      {/* <HotColumn data={2} /> */}
+      {/* <HotColumn data={3} /> */}
+      {/* <HotColumn data={4} type="date" allowInvalid={false} /> */}
+      {/* <HotColumn data={5} /> */}
+      {/* <HotColumn data={6} type="checkbox" className="htCenter" /> */}
+      {/* <HotColumn data={7} type="numeric" /> */}
+      {/* <HotColumn data={8} readOnly={true} className="htMiddle"> */}
         {/* @ts-ignore Element inherits some props. It's hard to type it. */}
-        <ProgressBarRenderer hot-renderer />
-      </HotColumn>
-      <HotColumn data={9} readOnly={true} className="htCenter">
+        {/* <ProgressBarRenderer hot-renderer /> */}
+      {/* </HotColumn> */}
+      {/* <HotColumn data={9} readOnly={true} className="htCenter"> */}
         {/* @ts-ignore Element inherits some props. It's hard to type it. */}
         {/* <StarsRenderer hot-renderer /> */}
-      </HotColumn>
+      {/* </HotColumn> */}
     </HotTable>
+    </div>
   );
 };
 
-const getCase = ()=>{
-  
-}
 export default App;
