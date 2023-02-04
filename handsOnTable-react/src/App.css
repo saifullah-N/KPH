@@ -37,3 +37,9 @@ table.htCore tr.selected td {
 .handsontable .htRight .changeType {
   margin: 3px 1px 0 13px;
 }
+
+/* text{
+  stroke: white;
+  fill:none;
+  font: 1em sans-serif;
+} */
